@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux'
-import todos from './todos'
+import { persistentReducer } from 'redux-pouchdb-plus';
+
+import fonts from './fonts'
 import visibilityFilter from './visibilityFilter'
 
-const reducer = combineReducers({
-  todos,
+let pFonts = persistentReducer(fonts)
+
+const reducers = combineReducers({
+  'fonts': pFonts,
   visibilityFilter
 })
 
-export default reducer
+export default reducers

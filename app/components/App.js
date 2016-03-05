@@ -1,14 +1,29 @@
-import React from 'react'
-import Footer from './Footer'
-import AddTodo from '../containers/AddTodo'
-import VisibleTodoList from '../containers/VisibleTodoList'
+import React, { Component } from 'react';
+import { Flex, Box } from 'reflexbox';
 
-const App = () => (
-  <div>
-    <AddTodo />
-    <VisibleTodoList />
-    <Footer />
-  </div>
-)
+import FilteredFontList from '../containers/FilteredFontList'
+import Filters from './Filters'
+import FontDetails from './FontDetails'
 
+class App extends Component {
+
+  render() {
+    return (
+      <Flex auto={true}>
+        <Box p={2} col={2}>
+          <Filters />
+        </Box>
+        <Box p={2} col={3}>
+          <FilteredFontList />
+        </Box>
+        <Box p={2} col={7}>
+          <p>Details</p>
+        </Box>
+      </Flex>
+    )
+
+  }
+
+}
+  
 export default App

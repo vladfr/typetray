@@ -12,7 +12,6 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux'
 
 import App from './components/App'
-import HelloWorld from './hello_world/hello_world'; // code authored by you in this project
 
 // our main redux store
 import store from './stores/index'
@@ -41,11 +40,8 @@ console.log('The author of this app is:', appDir.read('package.json', 'json').au
 
 
 render (
-  <div>
-    <HelloWorld />
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </div>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById("root")
 )

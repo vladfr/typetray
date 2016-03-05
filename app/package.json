@@ -6,8 +6,9 @@
   "version": "0.1.0",
   "author": "Mr Gumby",
   "copyright": "© 2016, your company here",
-  "main": "background.js",
+  "main": "main.js",
   "dependencies": {
+    "belle": "^2.0.4",
     "fs-jetpack": "^0.7.0",
     "immutable": "^3.7.6",
     "pouchdb": "^5.3.0",
@@ -15,8 +16,10 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
+    "react-virtualized": "^5.5.0",
     "redux": "^3.3.1",
     "redux-actions": "^0.9.1",
-    "redux-pouchdb-plus": "^0.8.1"
+    "redux-pouchdb-plus": "^0.8.1",
+    "reflexbox": "^1.0.0"
   }
 }

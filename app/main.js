@@ -12,6 +12,7 @@ import env from './env';
 
 let menu;
 let mainWindow = null;
+let bgWindow = null;
 
 // Preserver of the window size and position between app launches.
 let mainWindowState = windowStateKeeper('main', {
@@ -242,7 +243,20 @@ let startMainWindow = function() {
   });
 }
 
-app.on('ready', startMainWindow);
+let startBackgroundWindow = function() {
+  const win = new BrowserWindow({
+    show: false
+  });
+
+  win.loadUrl(`file://${__dirname}/background.html`);
+
+  return win;
+}
+
+app.on('ready', () => {
+  startMainWindow();
+  bgWindow = startBackgroundWindow();
+});
 app.on('activate', (event, hasVisibleWindows) => {
   if (!hasVisibleWindows) startMainWindow();
 });
